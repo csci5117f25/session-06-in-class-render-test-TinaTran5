@@ -1,3 +1,21 @@
-* {
-    background-color:lightsalmon;
+body {
+    background-color:lightcyan;
+}
+
+form {
+    
+    label {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+    }
+}
+
+button {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
 }
