@@ -25,11 +25,18 @@
     <button type="submit">submit</button>
 </form>
 
-{% for entry in guestbook %}
-<div>
-    <h5>{{entry.name}}</h5>
-    <div style="white-space-collapse: preserve;">{{entry.text}}</div>
-</div>
-{% endfor %}
+
+<h2>Guest List</h2>
+<ol>
+  {% for entry in guestbook %}
+    <li>
+      <strong>{{ entry.name }}</strong>: 
+      <div style="white-space-collapse: preserve;">{{ entry.text }}</div>
+    </li>
+  {% else %}
+    <li>No entries yet</li>
+  {% endfor %}
+</ol>
+
 </body>
 </html>
