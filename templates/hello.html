@@ -5,38 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
     <title>Hi!</title>
 </head>
 <body>
     
-<h1>Hello from Render</h1>
+<!-- <h1>Hello from Render</h1>
 {% if name %}
 <h2>and hello to {{name}}</h2>
-{% endif %}
+{% endif %}  -->
 
-<form action="/submit" method="post">
-    <label for="name">Enter Your Name:
-        <input type="text" name="name" placeholder="name" required>
-    </label>
-    <label for="text">Enter a Message:
-        <textarea name="text"></textarea>
-    </label>
-    <button type="submit">submit</button>
-</form>
+<!-- not responsive yet -->
+<div class="pure-g">
+    <div class="pure-u-1 header">
+        <h1>Header</h1>
+    </div>
+    <div class="pure-u-1-5 menu">
+        <div class="pure-menu custom-restricted-width">
+    <span class="pure-menu-heading">Yahoo Sites</span>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <a href="#" class="pure-menu-link">Flickr</a>
+        </li>
+        <li class="pure-menu-item">
+    </ul>
+</div>
+    </div>
+    <div class="pure-u-3-5 content">
+        <h2>Content</h1>
+        <form action="/submit" method="post">
+        <label for="name">Enter Your Name:
+            <input type="text" name="name" placeholder="your name" required>
+        </label>
+        <label for="text">Enter a Message:
+            <textarea name="text"></textarea>
+        </label>
+        <button type="submit">submit</button>
+        </form>
 
-
-<h2>Guest List</h2>
-<ol>
-  {% for entry in guestbook %}
-    <li>
-      <strong>{{ entry.name }}</strong>: 
-      <div style="white-space-collapse: preserve;">{{ entry.text }}</div>
-    </li>
-  {% else %}
-    <li>No entries yet</li>
-  {% endfor %}
-</ol>
-
+        <h2>Guest List</h2>
+        <ol>
+        {% for entry in guestbook %}
+            <li>
+            <strong>{{ entry.name }}</strong>: 
+            <div style="white-space-collapse: preserve;">{{ entry.text }}</div>
+            </li>
+        {% else %}
+            <li>No entries yet</li>
+        {% endfor %}
+        </ol>
+    </div>
+    <div class="pure-u-1-5 ad">
+        <h2>Ads</h1>
+        <p>Ads</p>
+        <p>Ads</p>
+    </div>
+    <div class="pure-u-1 footer">
+        <h1>Footer</h1>
+    </div>
+</div>
 </body>
 </html>
