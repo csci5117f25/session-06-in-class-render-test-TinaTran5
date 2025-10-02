@@ -10,10 +10,27 @@
 </head>
 <body>
     
-<!-- <h1>Hello from Render</h1>
+<h1>Hello from Render</h1>
 {% if name %}
 <h2>and hello to {{name}}</h2>
-{% endif %}  -->
+{% endif %} 
+
+
+{% if session %}
+<h1>Session Exists</h1>
+<code>
+    <pre>
+        <!-- gets user value out of session, python obj into json string-->
+        <!-- | filter -->
+        {{session | tojson}}
+    </pre>
+</code>
+{% else %}
+<h1>NO SESSION</h1>
+{% endif %}
+
+<!-- http://localhost:5000/callback -->
+
 
 <!-- not responsive yet -->
 <div class="pure-g">
